@@ -1,19 +1,8 @@
 Animation = require('lib.Animation')
 
-idleAnimation = {
-   name = 'dragon',
-   num = 9,
-   delay = 0.2
-}
-
 function love.load()
-   monster = Animation:new{
-      name = 'dragon',
-      num = 9,
-      delay = 0.1,
-      effect = 'pingpong',
-      after = idleAnimation
-   }
+   love.window.setMode(1280, 720, {msaa = 0})
+   monster = Animation:new{ name = 'fluffy_agace', num = 6, delay = 0.05, effect = 'pingpong' }
 end
 
 function love.update(dt)
@@ -22,5 +11,5 @@ function love.update(dt)
 end
 
 function love.draw()
-   monster:draw(50, 50)
+   monster:draw(50, 50, 0, 0.1, 0.1)
 end

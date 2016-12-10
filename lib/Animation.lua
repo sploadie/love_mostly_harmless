@@ -16,7 +16,7 @@ function Animation:load(args)
 	self.num   = args.num
 	self.delay = args.delay or 0.5
 	self.after = args.after
-	self:setFrames(args.path or 'data/animations', args.ext or 'png', args.effect)
+	self:setFrames(args.path or 'data/animations/'..args.name, args.ext or 'png', args.effect)
 end
 
 function Animation:setFrames(path, ext, effect)
