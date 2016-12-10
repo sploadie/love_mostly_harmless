@@ -18,30 +18,33 @@ function Button:load(image, funct, x, y, r, sx, sy, ox, oy, kx, ky)
 	self.name = image
 	self.onclick = funct
 	self.data = {
-		x  = x
-		y  = y
-		r  = r
-		sx = sx
-		sy = sy
-		ox = ox
-		oy = oy
-		kx = kx
+		x  = x,
+		y  = y,
+		r  = r,
+		sx = sx or 1,
+		sy = sy or 1,
+		ox = ox or 0,
+		oy = oy or 0,
+		kx = kx,
 		ky = ky
 	}
 end
 
-function Button:mousepressed(button, mx, my)
-	if button == 'l'
-	and mx >= (self.x + self.data.ox) and mx < (self.x + self.data.ox) + self.image:getWidth() / (self.data.sx or 1)
-	and my >= (self.y + self.data.oy) and my < (self.y + self.data.oy) + self.image:getHeight() / (self.data.sy or 1) then
-		print("Button clicked: "..self.name.." "..mx.."/"..my)
+function Button:mousepressed(mb, mx, my)
+	if mb == 'l'
+	and mx >= (self.data.x + self.data.ox) and mx < (self.data.x + self.data.ox) + self.image:getWidth() * self.data.sx
+	and my >= (self.data.y + self.data.oy) and my < (self.data.y + self.data.oy) + self.image:getHeight() * self.data.sy then
 		self.onclick()
+		return true
 	end
+	return false
 end
 
-function Button:mousepressedAll(button, mx, my)
-	for button in self.buttons do
-		button:mousepressed(button, mx, my)
+function Button:mousepressedAll(mb, mx, my)
+	for i,button in ipairs(self.buttons) do
+		if button:mousepressed(mb, mx, my) then
+			print("Button clicked: "..button.name.." "..mx.."/"..my)
+		end
 	end
 end
 
@@ -50,7 +53,7 @@ function Button:draw()
 end
 
 function Button:drawAll()
-	for button in self.buttons do
+	for i,button in ipairs(self.buttons) do
 		button:draw()
 	end
 end

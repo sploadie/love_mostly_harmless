@@ -56,6 +56,7 @@ function Animation:update(dt)
 end
 
 function Animation:draw(x, y, r, sx, sy, ox, oy, kx, ky)
+	love.graphics.setColor(255, 255, 255)
 	love.graphics.draw(self.frames[self.index], x, y, r, sx, sy, ox, oy, kx, ky)
 end
 
