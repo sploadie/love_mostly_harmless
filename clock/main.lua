@@ -10,7 +10,7 @@ function love.load()
 end
 
 function love.update(dt)
-  m = m + dt *10
+  m = m + dt
   if m > 60 * h then
     h = h + 1
   end
