@@ -6,9 +6,9 @@ Monster.fluffy.caresse    = { buff =    0, name = 'fluffy_caresse', num = 6, del
 Monster.fluffy.content    = { buff = -0.2, name = 'fluffy_content', num = 6, delay = 0.05, effect = 'pingpong' }
 Monster.fluffy.endormi    = { buff = -0.8, name = 'fluffy_endormi', num = 6, delay = 0.05, effect = 'pingpong' }
 Monster.fluffy.ennui      = { buff =  0.2, name = 'fluffy_ennui', num = 6, delay = 0.05, effect = 'pingpong' }
-Monster.fluffy.monsterize = { buff =  0.6, name = 'fluffy_monsterize', num = 9, delay = 0.05, effect = 'pingpong', after = Monster.fluffy.agace }
-Monster.fluffy.musique    = { buff = -0.2, name = 'fluffy_musique', num = 6, delay = 0.05, effect = 'pingpong' }
 Monster.fluffy.neutre     = { buff =    0, name = 'fluffy_neutre', num = 6, delay = 0.05, effect = 'pingpong' }
+Monster.fluffy.monsterize = { buff =  0.6, name = 'fluffy_monsterize', num = 9, delay = 0.1, effect = 'pingpong', after = Monster.fluffy.neutre }
+Monster.fluffy.musique    = { buff = -0.2, name = 'fluffy_musique', num = 6, delay = 0.05, effect = 'pingpong' }
 Monster.fluffy.triste     = { buff =  0.4, name = 'fluffy_triste', num = 6, delay = 0.05, effect = 'pingpong' }
 
 function Monster:start()
