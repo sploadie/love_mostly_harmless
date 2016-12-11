@@ -2,6 +2,7 @@ local Game = {
 	state = 'StartMenu',
 	aggroSpeed = 0.5,
 	dmgMult = 1,
+	health = 220,
 	aggro = 1,
 	aggroEffects = {}
 }

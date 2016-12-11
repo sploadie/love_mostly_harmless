@@ -2,6 +2,7 @@ local ui = {}
 ui.food = {}
 local clock = require ("ui.clock")
 local agre = require ("ui.agre")
+local health = require ("ui.health")
 function ui:start()
 	i = 0
 	clock.start()
@@ -50,6 +51,7 @@ function ui:draw()
 	love.graphics.draw(dialogBox,150,530,0)
 	clock.draw(20 ,0)
 	agre.draw()
+	health.draw()
 	-- Monster
 	monster:draw(600, 310, 0, 0.2, 0.2)
 	-- Buttons
