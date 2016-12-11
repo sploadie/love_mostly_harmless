@@ -33,7 +33,7 @@ function Game:updateAggro(delta)
 	end
 	local deltaAggro = delta * self.aggroSpeed * (1 + add) * mult
 	self.aggro = self.aggro + deltaAggro
-	print('Aggro: '..self.aggro..' Add: '..add..' Mult: '..mult)
+	-- print('Aggro: '..self.aggro..' Add: '..add..' Mult: '..mult)
 	self:cleanEffects()
 end
 
