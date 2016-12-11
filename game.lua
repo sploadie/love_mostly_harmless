@@ -32,7 +32,7 @@ function Game:updateAggro(delta)
 			effect.time = effect.time - delta
 		end
 	end
-	local deltaAggro = delta * self.aggroSpeed * (1 + add) * mult
+	local deltaAggro = delta * self.aggroSpeed * (1 + add + (Monster.emote or 0)) * mult
 	self.aggro = self.aggro + deltaAggro
 	-- print('Aggro: '..self.aggro..' Add: '..add..' Mult: '..mult)
 	self:cleanEffects()
